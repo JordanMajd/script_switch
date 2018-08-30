@@ -3,22 +3,21 @@
 'use strict';
 
 var pattern = '<all_urls>';
-var settings = ['allow', 'block']
 
-chrome.contentSettings.javascript.set({
-	'primaryPattern': pattern,
-	'setting': settings[1]
-});
+var cspHeader = {
+	name: 'Content-Security-Policy',
+	value: "script-src 'none';"
+};
 
 browser.webRequest.onBeforeRequest.addListener(
-	filterURL,
-	{ urls: [pattern], types: ['script'] },
-	['blocking']
+	setCSPHeader,
+	{ urls: [pattern] },
+	['blocking', 'requestHeaders']
 );
 
 
-function filterURL(req){
-	console.log('Blocking: ' + req.url);
+function setCSPHeader(req){
+	req.responseHeaders.push(cspHeader);
 }
 
 })();
