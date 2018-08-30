@@ -1,3 +1,4 @@
+(function(){
 'use strict';
 
 var scripts = document.getElementsByTagName("script");
@@ -6,7 +7,8 @@ for(var i = 0; i < scripts.length; i++){
 }
 
 var noScripts = document.getElementsByTagName("noscript");
-for(var i = 0; i < scripts.length; i++){
+for(var i = 0; i < noScripts.length; i++){
 	noScripts[i].outerHTML = "div";
 }
 
+})();
