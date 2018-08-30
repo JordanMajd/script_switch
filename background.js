@@ -12,12 +12,13 @@ var cspHeader = {
 browser.webRequest.onHeadersReceived.addListener(
 	setCSPHeader,
 	{ urls: [pattern] },
-	['blocking', 'requestHeaders']
+	['blocking', 'responseHeaders']
 );
 
 
 function setCSPHeader(req){
 	req.responseHeaders.push(cspHeader);
+	return req.responseHeaders;
 }
 
 })();
