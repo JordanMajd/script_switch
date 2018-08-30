@@ -9,7 +9,7 @@ var cspHeader = {
 	value: "script-src 'none';"
 };
 
-browser.webRequest.onBeforeRequest.addListener(
+browser.webRequest.onHeadersReceived.addListener(
 	setCSPHeader,
 	{ urls: [pattern] },
 	['blocking', 'requestHeaders']
