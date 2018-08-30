@@ -4,7 +4,8 @@
 	"version": "1.0",
 	"description": "A Firefox extension providing a toggle switch / shortcut to enable or disable javascript.",
 	"permissions": [
-		"webRequest"
+		"webRequest",
+		"<all_urls>"
 	],
 	"background": {
 		"scripts": ["background.js"]
