@@ -1,6 +1,6 @@
-'use strict';
+(function(){
 
-document.body.style.border = "5px solid red"
+'use strict';
 
 browser.webRequest.onBeforeRequest.addListener(
 	filterURL,
@@ -13,3 +13,4 @@ function filterURL(req){
 	console.log("Blocking: " + req.url);
 }
 
+})();
