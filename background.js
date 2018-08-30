@@ -4,7 +4,7 @@
 
 browser.webRequest.onBeforeRequest.addListener(
 	filterURL,
-	{ urls: ["<all_urls>", types: ["script"] },
+	{ urls: ["<all_urls>"], types: ["script"] },
 	["blocking"]
 );
 
