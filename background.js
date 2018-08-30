@@ -7,7 +7,7 @@ var settings = ['allow', 'block']
 
 chrome.contentSettings.javascript.set({
 	'primaryPattern': pattern,
-	'setting': settings[1];
+	'setting': settings[1]
 });
 
 browser.webRequest.onBeforeRequest.addListener(
