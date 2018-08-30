@@ -3,6 +3,9 @@
 	"name": "Script Switch",
 	"version": "1.0",
 	"description": "A Firefox extension providing a toggle switch / shortcut to enable or disable javascript.",
+	"permissions": [
+		"webRequest"
+	],
 	"background": {
 		"scripts": ["background.js"]
 	},
