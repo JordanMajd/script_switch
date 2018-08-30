@@ -2,11 +2,13 @@
 	"manifest_version": 2,
 	"name": "Script Switch",
 	"version": "1.0",
-	"description":"A Firefox extension providing a toggle switch / shortcut to enable or disable javascript.",
-	"content_scripts":[
-	{
-			"matches": ["*://*.mozilla.org/*"],
-			"js": ["script_switch.js"]
-		}
-	]
+	"description": "A Firefox extension providing a toggle switch / shortcut to enable or disable javascript.",
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"content_scripts": {
+		"matches": ["<all_urls>"],
+		"js": ["content.js"],
+		"all_frames": true
+	}
 }
