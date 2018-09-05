@@ -21,8 +21,9 @@ var offIcon = {
 	96: "icons/off.svg"
 };
 
-browser.browserAction.onClicked.addListener(toggleScript);
 
+browser.browserAction.onClicked.addListener(toggleScript);
+browser.commands.onCommand.addListener(toggleScript);
 
 function enableJS(){
 

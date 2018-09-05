@@ -22,6 +22,15 @@
 	},
 	"browser_action": {
 		"default_icon": "icons/on.svg",
-		"default_title": "Script Switch: JS Enabled"
+		"default_title": "Script Switch: JS enabled"
+	},
+	"commands": {
+		"toggle": {
+			"suggested_key": {
+				"default": "Alt+J"
+			},
+			"description": "Toggle enable or disable  JS"
+
+		}
 	}
 }
