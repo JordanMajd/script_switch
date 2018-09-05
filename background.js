@@ -16,9 +16,10 @@ browser.webRequest.onHeadersReceived.addListener(
 );
 
 
-function setCSPHeader(req){
-	req.responseHeaders.push(cspHeader);
-	return req.responseHeaders;
+function setCSPHeader(res){
+	console.log("Setting headers...");
+	res.responseHeaders.push(cspHeader);
+	return { responseHeaders: res.responseHeaders };
 }
 
 })();
