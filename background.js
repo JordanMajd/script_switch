@@ -1,8 +1,7 @@
 (function(){
-
 'use strict';
 
-var enabled = true;
+var isJsEnabled = true;
 
 var pattern = '<all_urls>';
 
@@ -24,23 +23,20 @@ var offIcon = {
 
 browser.browserAction.onClicked.addListener(toggleScript);
 browser.commands.onCommand.addListener(toggleScript);
+browser.runtime.onMessage.addListener(function(request, sender, sendResponse){
+	if(request  === 'status-query')
+	sendResponse(isJsEnabled);
+});
+
 
 function enableJS(){
-
-	console.log("Enabling javascript");
-
 	browser.browserAction.setIcon({path:onIcon});
 	browser.browserAction.setTitle({title: "Script Switch: JS enabled"});
 	browser.webRequest.onHeadersReceived.removeListener(setCSPHeader);
-	browser.tabs.query({currentWindow: true})
-		.then(reloadTabs);
 }
 
 
 function disableJS(){
-
-	console.log("Disabling javascript");
-
 	browser.browserAction.setIcon({path:offIcon});
 	browser.browserAction.setTitle({title: "Script Switch: JS disabled"});
 
@@ -49,9 +45,8 @@ function disableJS(){
 		{ urls: [pattern] },
 		['blocking', 'responseHeaders']
 	);
-	browser.tabs.query({currentWindow: true})
-		.then(reloadTabs);
 }
+
 
 function reloadTabs(tabs){
 	for(let tab of tabs){
@@ -61,26 +56,23 @@ function reloadTabs(tabs){
 
 
 function setCSPHeader(res){
-
-	console.log("Overriding Content Security Policy...");
-
 	res.responseHeaders.push(cspHeader);
-
 	return { responseHeaders: res.responseHeaders };
 }
 
 
 function toggleScript(){
 
-	enabled = !enabled;
+	isJsEnabled = !isJsEnabled;
 
-	if(enabled){
+	if(isJsEnabled){
 		enableJS();
 	} else {
 		disableJS();
 	}
 
-	browser.tabs.reload({bypassCache:true});
+	browser.tabs.query({currentWindow: true})
+		.then(reloadTabs);
 }
 
 })();
