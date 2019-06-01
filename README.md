@@ -3,6 +3,8 @@
 
 A simple Firefox extension providing a toggle switch to easily enable or disable javascript on _all_ tabs. To toggle JS simply press extension's toolbar button or press `ALT+J`.
 
+Test it out on [isjsenabled.com](http://isjsenabled.com):
+
 - <img src="https://raw.githubusercontent.com/JordanMajd/script_switch/master/icons/on.png" width="16" height="16" alt="green switch on"> indicates that javascript is enabled for all tabs, press to disable javascript.
 - <img src="https://raw.githubusercontent.com/JordanMajd/script_switch/master/icons/off.png" width="16" height="16" alt="grey switch of"> indicates that javascript is disabled for all tabs, press to enable javascript.
 - Keyboard shortcut to toggle: `ALT+J`
