@@ -15,8 +15,6 @@ Enables and disables Javascript and refreshes all tabs in all windows.
 - <img src="https://raw.githubusercontent.com/JordanMajd/script_switch/master/icons/off.png" width="16" height="16" alt="grey switch of"> indicates that javascript is disabled, press to enable javascript.
 - Keyboard shortcut to toggle: `ALT+J`
 
-
-
 ## License
 
 MIT License, please see [LICENSE](/LICENSE) for more info.
