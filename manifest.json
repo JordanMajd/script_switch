@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Script Switch",
 	"version": "1.0",
-	"description": "A Firefox extension providing a toggle switch / shortcut to enable or disable javascript.",
+	"description": "A simple Firefox extension providing a toggle switch and keyboard shortcut to quickly enable or disable javascript for all tabs.",
 	"permissions": [
 		"webRequest",
 		"webRequestBlocking",
@@ -22,15 +22,14 @@
 	},
 	"browser_action": {
 		"default_icon": "icons/on.png",
-		"default_title": "Script Switch: JS enabled"
+		"default_title": "JS Enabled"
 	},
 	"commands": {
 		"toggle": {
 			"suggested_key": {
 				"default": "Alt+J"
 			},
-			"description": "Toggle enable or disable  JS"
-
+			"description": "Toggle enable or disable JS"
 		}
 	}
 }

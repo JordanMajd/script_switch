@@ -31,14 +31,14 @@ browser.runtime.onMessage.addListener(function(request, sender, sendResponse){
 
 function enableJS(){
 	browser.browserAction.setIcon({path:onIcon});
-	browser.browserAction.setTitle({title: "Script Switch: JS enabled"});
+	browser.browserAction.setTitle({title: "JS Enabled"});
 	browser.webRequest.onHeadersReceived.removeListener(setCSPHeader);
 }
 
 
 function disableJS(){
 	browser.browserAction.setIcon({path:offIcon});
-	browser.browserAction.setTitle({title: "Script Switch: JS disabled"});
+	browser.browserAction.setTitle({title: "JS Disabled"});
 
 	browser.webRequest.onHeadersReceived.addListener(
 		setCSPHeader,
@@ -49,7 +49,7 @@ function disableJS(){
 
 
 function reloadTabs(tabs){
-	for(let tab of tabs){
+	for(var tab of tabs){
 		browser.tabs.reload(tab.id);
 	}
 }
