@@ -17,11 +17,11 @@
 		"all_frames": true
 	}],
 	"icons": {
-		"48": "icons/on.svg",
-		"96": "icons/on.svg"
+		"48": "icons/on.png",
+		"96": "icons/on.png"
 	},
 	"browser_action": {
-		"default_icon": "icons/on.svg",
+		"default_icon": "icons/on.png",
 		"default_title": "Script Switch: JS enabled"
 	},
 	"commands": {

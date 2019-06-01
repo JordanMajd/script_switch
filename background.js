@@ -12,13 +12,13 @@ var cspHeader = {
 };
 
 var onIcon = {
-	48: "icons/on.svg",
-	96: "icons/on.svg"
+	48: "icons/on.png",
+	96: "icons/on.png"
 };
 
 var offIcon = {
-	48: "icons/off.svg",
-	96: "icons/off.svg"
+	48: "icons/off.png",
+	96: "icons/off.png"
 };
 
 
