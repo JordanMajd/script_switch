@@ -3,6 +3,8 @@
 
 A simple Firefox extension to quickly enable or disable javascript on _all_ tabs and windows. To toggle JS simply press extension's toolbar button or press `ALT+J`.
 
+Install Script Switch via [Firefox Add-Ons](https://addons.mozilla.org/en-US/firefox/addon/script-switch/).
+
 If you like or are using this extension, please give it a :star: for motivation :)
 
 ![Gif of user disabling and enabling javascript](/script_switch.gif)
