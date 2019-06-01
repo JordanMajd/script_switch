@@ -31,7 +31,6 @@ function enableJS(){
 
 	browser.browserAction.setIcon({path:onIcon});
 	browser.browserAction.setTitle({title: "Script Switch: JS enabled"});
-	// https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs
 	browser.webRequest.onHeadersReceived.removeListener(setCSPHeader);
 	browser.tabs.query({currentWindow: true})
 		.then(reloadTabs);
