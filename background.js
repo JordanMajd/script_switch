@@ -24,8 +24,9 @@ var offIcon = {
 browser.browserAction.onClicked.addListener(toggleScript);
 browser.commands.onCommand.addListener(toggleScript);
 browser.runtime.onMessage.addListener(function(request, sender, sendResponse){
-	if(request  === 'status-query')
-	sendResponse(isJsEnabled);
+	if(request === 'status-query'){
+		sendResponse(isJsEnabled);
+	}
 });
 
 
@@ -50,13 +51,15 @@ function disableJS(){
 
 function reloadTabs(tabs){
 	for(var tab of tabs){
-		browser.tabs.reload(tab.id);
+		browser.tabs.reload(tab.id, {bypassCache:true});
 	}
 }
 
 
 function setCSPHeader(res){
-	res.responseHeaders.push(cspHeader);
+	if(isJsEnabled === false){
+		res.responseHeaders.push(cspHeader);
+	}
 	return { responseHeaders: res.responseHeaders };
 }
 
