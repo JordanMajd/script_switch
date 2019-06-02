@@ -5,9 +5,7 @@ A simple Firefox extension to quickly enable or disable javascript on _all_ tabs
 
 Install Script Switch via [Firefox Add-Ons](https://addons.mozilla.org/en-US/firefox/addon/script-switch/).
 
-If you like or are using this extension, please give it a :star: for motivation :)
-
-![Gif of user disabling and enabling javascript](/script_switch.gif)
+Script Switch was created in an effort to learn about how Firefox Extensions work, and as a result I ended up creating [isjsenabled](https://isjsenabled.com) to validate its functionality.
 
 ## Functionality:
 
@@ -18,6 +16,10 @@ Enables and disables Javascript and refreshes all tabs in all windows.
 - Keyboard shortcut to toggle: `ALT+J`
 
 Feel free to test it out on [isjsenabled.com](http://isjsenabled.com), feedback and pull requests are welcome.
+
+## Preview
+
+![Gif of user disabling and enabling javascript](/script_switch.gif)
 
 ## License
 
